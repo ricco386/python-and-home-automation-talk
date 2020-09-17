@@ -26,109 +26,290 @@
 			<div class="slides">
 
 				<section data-transition="zoom" class="dark">
-				  <h2>Python and Home automation</h2>
+				  <h2>Python<br> and<br> Home automation</h2>
 				  <p>
 					<small><a href="https://twitter.com/RicCo386" target="_blank">@RicCo386</a> / <a href="https://spy.python.sk/" target="_blank">SPy o.z.</a></small>
 				  </p>
 				  <p>
 					<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
 				  </p>
-				  <aside class="notes">
-					  TBD
-				  </aside>
 				</section>
 
 				<section>
-					O mne ....					
+					<section>
+						<h2>What is home automation?</h2>
+						<span style="display: inline-block;" class="fragment fade-up">
+							It is a technological solution that enables automating the bulk of electronic, electrical and technology-based tasks within a home.
+						</span>
+					</section>
+					<section>
+						Early home automation began with labor-saving machines.
+						<span style="display: inline-block;" class="fragment fade-down">
+							1975 first general purpose home automation network technology, X10.
+						</span>
+						<aside class="notes">
+							<p>
+								X10 is a communication protocol for electronic devices. It primarily uses electric power transmission wiring for signalling and control, where the signals involve brief radio frequency bursts of digital data, and remains the most widely available.
+							</p>
+						</aside>
+					</section>
+					<section>
+						A home automation system will control lighting, climate, entertainment systems, and appliances. It may also include home security such as access control and alarm systems.
+						<span style="display: inline-block;" class="fragment fade-up">
+							A home automation system typically connects controlled devices to a central hub or "gateway".
+						</span>
+						<aside class="notes">
+							<p>
+								The home automation market estimated value $12.81 billion in the year 2020. (Expected to double by 2022)
+							</p>
+						</aside>
+					</section>
+					<section>
+						Home automation suffers from platform fragmentation and lack of technical standards.
+						<span style="display: inline-block;" class="fragment fade-up">
+							The nature of home automation devices can also be a problem for security, data security and data privacy.
+						</span>
+						<aside class="notes">
+							<ul>
+								<li>Electrical standards: voltage, frequency, plugs and sockets, battery shapes, etc... vs. Smart What?</li>
+								<li>Legal regulation (almost nothing)</li>
+								<li>Walled gardens:
+									<ul>
+									<li>Clouds: Apple Home kit vs. SmartThings, etc...</li>
+									<li>Standards: Zigbee vs. Z-Wave</li>
+									<li>Vendor lock in: no updates, forced purchases (new devices)</li>
+									<li></li>
+									</ul>
+								</li>
+								<li>Failure, malfunction - inconvenient (standing before the door), challenging (who knows how to repair, rebooting samsung bluerays), just because internet outage</li>
+								<li>Bleeding edge versus leading edge:
+									<ul>
+									<li>Lighthouse cameras getting out of business</li>
+									<li>Nest purchase by Google => Nest Home no longer support IFTTT)</li>
+									<li>No budget for marketing, no budget for security</li>
+									</ul>
+								</li>
+								<li>Security personal (listening, presence, pranks), vs. security IT (DDOS, network security, vendor lock in)</li>
+								<li>One compromised device could mean access to whole network</li>
+							</ul>
+						</aside>
+					</section>
 				</section>
 
 				<section>
-					what is home automation?
-					A home automation system will control lighting, climate, entertainment systems, and appliances. It may also include home security such as access control and alarm systems.
-					A home automation system typically connects controlled devices to a central hub or "gateway".
-				</section>
-
-				<section>
-					early 1900 labour saving machine
-					1975 X10 protocol
-					problems many vendors many standards, fragmented
-					software is eating the world: hvac, light occupangy, leak detaction, smoke, pet, baby etc..
-				</section>
-
-				<section>
-					<section data-background="img/raspberry_pi4.jpg" data-background-size="80%">
+					<section data-background="img/raspberry_pi4.jpg" data-background-size="70%">
 						<div class="background_layer">
 						Raspberry Pi
 						</div>
 					</section>
-					<section data-background="img/raspberry_pi4.jpg" data-background-size="80%"></section>
-
-					<section>
-						RPi shields
+					<section data-background="img/raspberry_pi4.jpg" data-background-size="70%">
+						<aside class="notes">
+							<ul>
+								<li>from 700 MHz ARM (RPi 1) to 1.5 GHz quad-core</li>
+								<li>from 256 MB to 8 GB RAM</li>
+								<li>26-pin, 40-pin, 3.3V, 5V (no analog pin)</li>
+								<li>around 35 Euro (25 Old, 5 for RPi Zero, or free with magazine)</li>
+								<li>December 2019 30 million units sold; Sales are about 6 million per year.</li>
+								<li>Raspberry Pi 2 reboots on FLASH</li>
+								<li>HDMI CEC</li>
+								<li>Community, Education, Homeautomation, Science, Industry, etc...</li>
+							</ul>
+						</aside>
 					</section>
 
 					<section>
-						RPi copycats
+						<img src="img/explorer_hat.jpg" width="33%">
+						<img src="img/picade_hat.jpg" width="33%">
+						<img src="img/aiy_voice_kit_hat.png" width="45%">
+
+						<aside class="notes">
+							HAT stands for “Hardware attached on top”.<br/>
+							Shield is the same but for Arduino.<br/>
+							Every Raspberry Pi since 2014’s Raspberry Pi B+ features a 40 pin GPIO, and all HAT boards are designed for that, but a hat that uses the PoE (Power over Ethernet) feature only works on a Pi 3B+ or Pi 4.<br/>
+							<ul>
+								<li>Pimoroni Explorer HAT Pro - General Purpose Raspberry Pi HAT</li>
+								<li>Pimoroni Picade X HAT - Raspberry Pi HAT for Retro Gaming</li>
+								<li>Google AIY Voice Kit (with HAT) - Raspberry Pi HAT for Artificial Intelligence</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<img src="img/Orange-Pi-PC2.jpg" width="33%">
+						<img src="img/Odroid_C4.jpg" width="33%">
+						<img src="img/RockPro64.jpg" width="33%">
+						<aside class="notes">
+							<ul>
+								<li>Orange Pi C2</li>
+								<li>Odroid C4</li>
+								<li>Pine RockPro64</li>
+							</ul>
 					</section>
 				</section>
 
 				<section>
-					MicroPython 
-					CircuitPython
+					<section data-background="img/MicroPython.jpg" data-background-size="40%">
+						<div class="background_layer">
+						MicroPython
+						</div>
+						<aside class="notes">
+						A microcontroller will run just one program repeatedly — not a full operating system.<br/>
+						<p>MicroPython is a lean and efficient implementation of the Python 3 programming language that includes a small subset of the Python standard library and is optimised to run on microcontrollers and in constrained environments. </p>
+						<p>MicroPython is packed full of advanced features such as an interactive prompt, arbitrary precision integers, closures, list comprehension, generators, exception handling and more. Yet it is compact enough to fit and run within just 256k of code space and 16k of RAM.</p>
+						</aside>
+					</section>
+
+					<section data-background="img/CircuitPython.png" data-background-size="50%">
+						<div class="background_layer">
+						CircuitPython
+						</div>
+						<aside class="notes">
+						It’s an education friendly open-source derivative of MicroPython.
+						</aside>
+					</section>
 				</section>
 
 				<section>
-					<section data-background="img/bbc_micro_bit.png" data-background-size="80%">
+					<section data-background="img/bbc_micro_bit.png" data-background-size="70%">
 						<div class="background_layer">
 						BBC micro bit
 						</div>
 					</section>
-					<section data-background="img/bbc_micro_bit.png" data-background-size="80%"></section>
+					<section data-background="img/bbc_micro_bit.png" data-background-size="70%">
+						<aside class="notes">
+							<ul>
+								<li>16 MHz ARM Cortex-M0 microcontroller</li>
+								<li>256 KB Flash, 16 KB RAM</li>
+								<li>25-pin, 3.3V (analog pin)</li>
+								<li>around 	20 Euro</li>
+							</ul>
+						</aside>
+					</section>
 				</section>
 
 				<section>
-					<section data-background="img/nodemcu_esp8266.png" data-background-size="80%">
+					<section data-background="img/nodemcu_esp8266.png" data-background-size="70%">
 						<div class="background_layer">
 						ESP8266
 						</div>
 					</section>
-					<section data-background="img/nodemcu_esp8266.png" data-background-size="80%"></section>
+					<section data-background="img/nodemcu_esp8266.png" data-background-size="70%">
+						<aside class="notes">
+							<ul>
+								<li>80 MHz (default) or 160 MHz</li>
+								<li>32 KiB instruction, 80 KiB user data. NodeMCU: 128 kB, 4 MB</li>
+								<li>16-pin, 3V (analog pin). NodeMCU 5V</li>
+								<li>around 	6 Euro</li>
+							</ul>
+						</aside>
+					</section>
 
-					<section data-background="img/esp32.jpg" data-background-size="75%">
+					<section data-background="img/esp32.jpg" data-background-size="65%">
 						<div class="background_layer">
 						ESP32
 						</div>
 					</section>
-					<section data-background="img/esp32.jpg" data-background-size="75%"></section>
+					<section data-background="img/esp32.jpg" data-background-size="65%">
+						<aside class="notes">
+							<ul>
+								<li>160 or 240 MHz</li>
+								<li>520 KB RAM, 4-16 MB</li>
+								<li>38-pin, 5V (analog pin)</li>
+								<li>around 	9 Euro</li>
+							</ul>
+						</aside>
+					</section>
 				</section>
 
 				<section>
-					Sensors
+					<section data-background="img/arduino_uno.jpg" data-background-size="60%">
+						<div class="background_layer">
+						Arduino
+						</div>
+					</section>
+					<section data-background="img/arduino_uno.jpg" data-background-size="60%">
+						<aside class="notes">
+							<ul>
+								<li>16 MHz</li>
+								<li>2 KB RAM</li>
+								<li>20-pin, 5V (analog pin)</li>
+								<li>around 	18 Euro</li>
+							</ul>
+						</aside>
+					</section>
 				</section>
 
 				<section>
-					Bus
+					<section data-background="img/sensor_pir.jpg" data-background-size="50%">
+						<aside class="notes">The PIR motion sensor sent a signal only if something moves. About 2 Euro.</aside>
+					</section>
+					<section data-background="img/sensor_magnetic.jpg" data-background-size="50%">
+						<aside class="notes">The magnetic relay is opened as soon as a magnet is in the vicinity. Otherwise the access is closed. So if voltage is then passed through, you can check the condition. About 2 Euro.</aside>
+					</section>
+					<section data-background="img/sensor_dht.jpg" data-background-size="50%">
+						<aside class="notes">DHT11, DHT22 sensors can measure humidity as well as temperature. Only one GPIO is used. About 4 Euro.</aside>
+					</section>
+					<section data-background="img/sensor_gas.jpg" data-background-size="50%">
+						<aside class="notes">The MQ Analogue gas sensors can detect different gases at room temperature. About 6 Euro.</aside>
+					</section>
+					<section data-background="img/sensor_433mhz.jpg" data-background-size="50%">
+						<aside class="notes">Simplest method to transmit signals via radio are 433 MHz transmitter and receiver. Many other devices work also with 433 MHz radio signals, such as garage doors or radio controlled outlets, and these codes can be recorded and sent for specific tasks. About 3 Euro.</aside>
+					</section>
+					<section data-background="img/sensor_gyroscope.jpg" data-background-size="50%">
+						<aside class="notes">A gyroscope (circular instrument) is used to detect the rotation along the three axes. About 4 Euro. </aside>
+					</section>
+					<section data-background="img/sensor_moisture.jpg" data-background-size="50%">
+						<aside class="notes">Analogue humidity sensor placed in the ground and measures the humidity by current flowing between the strands. The more humid the earth in between, the higher the (analog) signal. About 6 Euro.</aside>
+					</section>
+					<section data-background="img/sensor_ultrasonic.jpg" data-background="img/sensor_dht.jpg" data-background-size="50%">
+						<aside class="notes">Measure distances by measuring the time elapsed between transmitting and receiving an ultrasound signal. About 3 Euro</aside>
+					</section>
+					<section data-background="img/sensor_servo.jpg" data-background="img/sensor_dht.jpg" data-background-size="50%">
+						<aside class="notes">Unlike ordinary motors, servo motors can be individually controlled.</aside>
+					</section>
+					<section data-background="img/sensor_potentiometer.jpg" data-background="img/sensor_dht.jpg" data-background-size="50%">
+						<aside class="notes">Potentiometers are basically rotatable resistors. You can change the resistor value easily by rotating the control knob. About 4 Euro.</aside>
+					</section>
 				</section>
 
 				<section>
-					Connectivity
+					<section data-background="img/mqtt-logo.svg" data-background-size="60%">
+						<aside class="notes">
+						  <ul>
+							  <li>the only security mechanism defined by the MQTT standard is a simple username and password</li>
+							  <li>strings appear in plain text in the MQTT message, to secure use TLS or VPN</li>
+							  <li>unique is Client ID, if second Client ID connect, broker kicks out the first user (can result in reconnect storm)</li>
+						  </ul>
+						</aside>
+					</section>
+					<section data-background="img/mqtt.png" data-background-size="60%">
+						<aside class="notes">
+						  <ul>
+							  <li>Publish/Subscribe Protocol (bidirectional)</li>
+							  <li>Mosquitto broker/client</li>
+							  <li>Paho python implementation of mosqitto client</li>
+						  </ul>
+						</aside>
+					</section>
 				</section>
 
 				<section>
-					Protocol (MQTT)
+					<section data-background="img/Home_Assistant_Logo.png" data-background-size="50%">
+						<div class="background_layer">
+						Home Assistant
+						</div>
+					</section>
+					<section data-background="img/openahb.svg" data-background-size="60%"></section>
 				</section>
 
-				<section>
-					Metrics
-				</section>
-
-				<section>
-					Home asstent
-					OpenHAB
-				</section>
-
-				<section>
-					Automations
+				<section data-transition="zoom" class="dark">
+				  <h2>Thank you</h2>
+				  <p>
+					<small><a href="https://twitter.com/RicCo386" target="_blank">@RicCo386</a> / <a href="https://spy.python.sk/" target="_blank">SPy o.z.</a></small>
+				  </p>
+				  <p>
+					<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+				  </p>
 				</section>
 
 			</div>
